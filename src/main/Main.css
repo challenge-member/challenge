@@ -1,0 +1,46 @@
+.main-wrapper {
+  height: 1080px;
+  display: grid;
+  grid-template:
+    "header" 1fr
+    "menu" 4fr
+    "content" 5fr;
+}
+
+.header {
+  grid-area: header;
+}
+
+.menu {
+  grid-area: menu;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 20px;
+  /*display: flex;*/
+  /*flex-wrap: wrap;*/
+}
+
+.content {
+  grid-area: content;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+
+.action-ttl {
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 36px;
+  color: #383576;
+}
+
+.time-wrapper {
+  margin-top: 17px;
+  display: grid;
+  grid-template:
+    "time1 time2"
+    "time3 time3"
+    "time4 time5";
+  column-gap: 20px;
+  row-gap: 20px;
+
+}
