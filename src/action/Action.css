@@ -22,3 +22,32 @@
   padding-top: 25px;
   padding-left: 33px;
 }
+
+.state-attend {
+  width: 64px;
+  height: 33px;
+  background: #DD2838;
+  border-radius: 5px;
+  float: right;
+  margin-top: 20px;
+  margin-right: 28px;
+}
+
+.state-leave {
+  width: 64px;
+  height: 33px;
+  background: #6F6AF2;
+  border-radius: 5px;
+  float: right;
+  margin-top: 20px;
+  margin-right: 28px;
+}
+
+.state {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+  color: #FFFFFF;
+  padding-top: 6px;
+}

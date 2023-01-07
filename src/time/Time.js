@@ -1,5 +1,6 @@
 import React from 'react';
 import './Time.css';
+// import Detail from './Detail';
 
 class Time extends React.Component {
   render() {

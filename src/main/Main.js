@@ -53,27 +53,27 @@ class Main extends React.Component {
                 <Time
                   name="出勤日"
                   time="14日"
-                  class="time 1"
+                  class="time time1"
                 />
                 <Time
                   name="土日祝"
                   time="6日"
-                  class="time 2"
+                  class="time time2"
                 />
                 <Time
                   name="出勤時間"
                   time="102時30分"
-                  class="time 3"
+                  class="time time3"
                 />
                 <Time
                   name="残業時間"
                   time="10時"
-                  class="time 4"
+                  class="time time4"
                 />
                 <Time
                   name="休憩時間"
                   time="15時"
-                  class="time 5"
+                  class="time time5"
                 />
               </div>
             </div>
