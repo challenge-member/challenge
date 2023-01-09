@@ -2,10 +2,10 @@ import React from 'react';
 import './Card.css';
 
 class Card extends React.Component {
-  
+
   handleOnclick = () => {
-      fetch('Card.json')
-      
+      fetch('https://b2dcae86f1e44ec6bfc0846e106152eb.vfs.cloud9.ap-northeast-1.amazonaws.com/attendances', date)
+
       .then(response => {
     	return response.json()
     })
@@ -19,7 +19,7 @@ class Card extends React.Component {
     })
     }
   render() {
-    
+
     return (
       <>
         <li className="card-container" id="cardclick"

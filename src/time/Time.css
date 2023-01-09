@@ -34,6 +34,34 @@
   grid-area: time3;
 }
 
+.dt {
+  background: #6F6AF2;
+  width: 55px;
+  height: 24px;
+  border-radius: 4px;
+  float: right;
+  margin-top: 26px;
+  margin-right: 23px;
+  display:flex;
+}
+
+.dt-img {
+  width: 12px;
+  height: 13px;
+  margin-top: 6px;
+  margin-left: 9px;
+}
+
+.detail {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 15px;
+  text-align: center;
+  color: #FFFFFF;
+  margin-top: 5px;
+  margin-left: 4px
+}
+
 .time4 {
   grid-area: time4;
 }

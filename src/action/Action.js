@@ -2,6 +2,10 @@ import React from 'react';
 import './Action.css';
 
 class Action extends React.Component {
+  
+  // let date = new Date()
+  // date.getFullYear() + '年'
+  
   render() {
     return (
       <>
