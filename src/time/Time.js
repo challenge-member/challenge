@@ -3,6 +3,8 @@ import './Time.css';
 
 class Time extends React.Component {
   render() {
+    
+    
     return (
       <>
         <div className={this.props.class}>
