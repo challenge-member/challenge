@@ -4,7 +4,7 @@ import './Card.css';
     class Card extends React.Component {
 
       handleOnclick = () => {
-            fetch('https://b2dcae86f1e44ec6bfc0846e106152eb.vfs.cloud9.ap-northeast-1.amazonaws.com:8081/api/attendances', {
+            fetch('http://localhost:3010/api/attendances', {
               method: 'GET',
               // headers: {'Content-Type': 'application/json'},
               // // mode: "cors",
