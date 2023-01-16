@@ -39,7 +39,7 @@ export default Action;
 // 2返されたモデルを何とかして最近の活動に表示する(how to pass~参照)
 
 // 3挨拶のロジックもやる, utc時間でDBに保存(rails)　ok
-// 4img タグをif文で表示 ok
+// 4img タグをif文で表示 done
 // 5一直線にする done
 
 // 16日進捗

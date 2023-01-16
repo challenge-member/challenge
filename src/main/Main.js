@@ -11,7 +11,7 @@ import Blue from '../image/Blue.png';
 import Red from '../image/Red.png';
 import Green from '../image/Green.png';
 import Purple from '../image/Purple.png';
-import Detail from '../image/Detail.png';
+
 
 import './Main.css';
 
@@ -65,9 +65,9 @@ class Main extends React.Component {
                   name="出勤時間"
                   time="102時30分"
                   class="time time3"
-                  detail="詳細"
-                  classdt="dt"
-                  img= {Detail}
+                  // detail="詳細"
+                  // classdt="dt"
+                  // img= {Detail}
                 />
                 <Time
                   name="残業時間"

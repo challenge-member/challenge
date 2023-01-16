@@ -34,7 +34,7 @@
   grid-area: time3;
 }
 
-.dt {
+/* .dt {
   background: #6F6AF2;
   width: 55px;
   height: 24px;
@@ -60,7 +60,7 @@
   color: #FFFFFF;
   margin-top: 5px;
   margin-left: 4px
-}
+} */
 
 .time4 {
   grid-area: time4;
