@@ -16,24 +16,54 @@ import Purple from '../image/Purple.png';
 import './Main.css';
 
 class Main extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      attendances: []
+  }
+}
+    handleClick(i) {
+    console.log(i)
+    this.setState({clickedNumber: i});
+}
+    componentDidMount() {
+      fetch('http://localhost:3010/api/attendances')
+        .then(response => {
+          return response.json()
+      })
+        .then(data => {
+          this.setState(
+            {attendances: data.slice(0, 6)}
+          )
+      })
+}
+    addToAttendances= (attendance) => {
+        this.setState(
+          {attendances: [attendance, ...this.state.attendances].slice(0, 6)}
+        )
+    }
+
   render() {
 
     return (
       <>
         <section className="main-wrapper" >
           <header className="header">
-            <Title />
+            <Title 
+            />
           </header>
           <ul className="menu">
             <Card
               name= "出勤"
               image= {Attend}
               state= {Blue}
+              addToAttendances={this.addToAttendances}
             />
             <Card
               name= "退勤"
               image= {Leave}
               state= {Red}
+              addToAttendances={this.addToAttendances}
             />
             <Card
               name= "残業"
@@ -47,7 +77,10 @@ class Main extends React.Component {
             />
           </ul>
           <div className="content">
-            <Action />
+            <Action 
+              value={this.state.clickedNumber}
+              attendances={this.state.attendances}
+            />
             <div className="time-content">
               <h2 className="action-ttl">退勤統計</h2>
               <div className="time-wrapper">
@@ -65,9 +98,6 @@ class Main extends React.Component {
                   name="出勤時間"
                   time="102時30分"
                   class="time time3"
-                  // detail="詳細"
-                  // classdt="dt"
-                  // img= {Detail}
                 />
                 <Time
                   name="残業時間"

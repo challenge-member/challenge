@@ -3,19 +3,22 @@ import './Card.css';
 
     class Card extends React.Component {
 
+
       handleOnclick = () => {
+            if (this.props.name !== "出勤" && this.props.name !== "退勤") {
+              return
+            }
             fetch('http://localhost:3010/api/attendances', {
-              method: 'GET',
-              // headers: {'Content-Type': 'application/json'},
-              // // mode: "cors",
-              // body: JSON.stringify({status: this.props.name})
+              method: 'POST',
+              headers: {'Content-Type': 'application/json'},
+              body: JSON.stringify({status: this.props.name})
             })
 
             .then(response => {
-          	return response.json()
+          	  return response.json()
           })
             .then(data => {
-              console.log(data)
+              this.props.addToAttendances(data)
           })
             .catch(error => {
             	console.log(error)

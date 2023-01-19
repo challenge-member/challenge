@@ -2,28 +2,76 @@ import React from 'react';
 import './Action.css';
 
 class Action extends React.Component {
-  
-  // let date = new Date()
-  // date.getFullYear() + '年'
-  
+  constructor(props) {
+    super(props);
+}
+
+  getYearMonthDate = (attendanceTime) => {
+    const attendanceTimeObject = new Date(attendanceTime)
+    return attendanceTimeObject.getFullYear() + '年' +
+      this.addZeroForTime((attendanceTimeObject.getMonth() + 1)) + '月' +
+      this.addZeroForTime(attendanceTimeObject.getDate()) + '日' +
+      ' (' + this.convertDayToJapaneseDay(attendanceTimeObject.getDay()) + ') '
+  } 
+
+  convertDayToJapaneseDay = (day) => {
+    switch (day) {
+      case 0:
+          return "日"
+      case 1:
+          return "月"
+      case 2:
+          return "火"
+      case 3:
+          return "水"
+      case 4:
+          return "木"
+      case 5:
+          return "金"
+      case 6:
+          return "土"
+      default:
+          return ""
+
+    }
+  } 
+
+  getHourMinuteSecond = (attendanceTime) => {
+    const attendanceTimeObject = new Date(attendanceTime)
+    const time =
+      this.addZeroForTime(attendanceTimeObject.getHours()) + '時' +
+      this.addZeroForTime(attendanceTimeObject.getMinutes()) + '分' +
+      this.addZeroForTime(attendanceTimeObject.getSeconds()) + '秒' 
+    return time
+  }
+
+  addZeroForTime = (i) => {
+    if (i < 10) {
+        i = "0" + i
+    }
+    return i
+  }
+
+  renderAttendanceList = (attendanceList) => {
+    console.log(attendanceList)
+    return attendanceList.map(attendance => 
+      <div className="actions" id="test">
+        <p className="act-date">{this.getYearMonthDate(attendance.created_at)}</p>
+        <p className="act-time">{this.getHourMinuteSecond(attendance.created_at)}</p>      
+        <div className={attendance.status === "出勤" ? "state-attend" : "state-leave"}>
+          <p className="state">{(attendance.status)}</p>
+        </div>
+      </div>
+      )
+  }
+
   render() {
+    const {attendances} = this.props
     return (
       <>
         <div className="action-container">
           <p className="act-ttl">最近の活動</p>
-          <div className="actions" id="test">
-            <div className="state-attend">
-              <p className="state">出勤</p>
-            </div>
-            <p className="act-date">Action dates</p>
-          </div>
-
-          <div className="actions" id="test">
-            <div className="state-leave">
-              <p className="state">退勤</p>
-            </div>
-            <p className="act-date">Action dates</p>
-          </div>
+          {this.renderAttendanceList(attendances)}
         </div>
       </>
     );
@@ -31,17 +79,3 @@ class Action extends React.Component {
 }
 
 export default Action;
-
-// indexのapi fetch,6個まで　Action.js ok
-// 出勤退勤ボタンの挙動
-// 二つの手順
-// 1create api(新たに作成したmodelを返す) にfetch okかも
-// 2返されたモデルを何とかして最近の活動に表示する(how to pass~参照)
-
-// 3挨拶のロジックもやる, utc時間でDBに保存(rails)　ok
-// 4img タグをif文で表示 done
-// 5一直線にする done
-
-// 16日進捗
-// 19残り完了　レビュー
-// 20納品
