@@ -1,0 +1,56 @@
+.main-wrapper {
+  height: 1080px;
+  display: grid;
+  grid-template:
+    "header" 1fr
+    "menu" 229px
+    "content" 5fr;
+}
+
+.header {
+  grid-area: header;
+}
+
+.menu {
+  grid-area: menu;
+  display: grid;
+  grid-template-columns: 214px 214px 214px 214px;
+  column-gap: 27px;
+  /*display: flex;*/
+  /*flex-wrap: wrap;*/
+}
+
+.content {
+  grid-area: content;
+  display: grid;
+  grid-template-columns: 514px 1fr;
+  column-gap: 62px;
+}
+
+.action-container {
+  margin-top: 68px;
+}
+
+.action-ttl {
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 36px;
+  color: #383576;
+}
+
+.time-content {
+  margin-top: 68px;
+}
+
+.time-wrapper {
+  margin-top: 17px;
+  display: grid;
+  grid-template:
+    "time1 time2"
+    "time3 time3"
+    "time4 time5";
+  grid-template-columns: 163px 163px;
+  column-gap: 35px;
+  row-gap: 30px;
+
+}
